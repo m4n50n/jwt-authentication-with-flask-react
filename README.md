@@ -9,6 +9,11 @@
 3. **Validation**: Any page considered "private" must always validate that the current user is valid, if not, the page must redirect the user back to login.
 4. **Logout**: Any moment the user must be able to press _logout_ in the navbar and it will get redirected back to the login path.
 
+## Front-End Installation 📄
+
+1. Install the packages: `$ npm install`
+2. Start the webpack dev server by running: `$ npm run start`
+
 ## Sources 📌
 
 <https://learn.breatheco.de/course/full-stack.v4/25/p/jwt-authentication-with-flask-react>
