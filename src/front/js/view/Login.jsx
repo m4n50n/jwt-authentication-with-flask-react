@@ -22,7 +22,7 @@ export const Login = () => {
                             <input type="password" className="form-control form-control-sm shadow-none" id="password" name="password" autoComplete="off" />
                         </div>
 
-                        <div class="invalid-feedback text-danger text-center fw-normal mb-2">
+                        <div className="invalid-feedback text-danger text-center fw-normal mb-2">
                             <small>Sorry, we don't recognise this account.</small>
                         </div>
 
@@ -30,10 +30,10 @@ export const Login = () => {
                             <button type="submit" className="btn btn-sm btn-success text-white shadow-none">Log In</button>
                         </div>
 
-                        <div class="text-white text-end fw-normal mt-4">
+                        <div className="text-white text-end fw-normal mt-4">
                             <small>Don't have and account?</small>
 
-                            <Link to="signup" className="ms-2 text-light text-decoration-none fw-bold">
+                            <Link to="/signup" className="ms-2 text-light text-decoration-none fw-bold">
                                 Register Now!
                             </Link>
                         </div>

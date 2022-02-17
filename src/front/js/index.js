@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // Include styles into the bundle
-import "../styles/index.css";
+import "../style/index.css";
 
 // Import components
 import AppRouter from "./AppRouter.jsx";

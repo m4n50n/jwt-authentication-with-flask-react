@@ -3,9 +3,10 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import injectContext from "./store/appContext";
 
 // Views
-import { Signup } from "./views/Signup.jsx";
-import { Login } from "./views/Login.jsx";
-import { Private } from "./views/Private.jsx";
+import { Signup } from "./view/Signup.jsx";
+import { Login } from "./view/Login.jsx";
+import { Private } from "./view/Private.jsx";
+import { Error404 } from "./view/Error404.jsx";
 
 // Layout
 import Layout from "./layout/Layout.jsx";
@@ -34,9 +35,7 @@ const AppRouter = () => {
 							<Private />
 						</Route>
 						<Route>
-							<h2 className="text-center my-5">
-								<span className="px-5 pt-2 pb-3 rounded-3 bg-white bg-opacity-25">ERROR 404: PAGE NOT FOUND</span>
-							</h2>
+							<Error404 />
 						</Route>
 					</Switch>
 				</Layout>

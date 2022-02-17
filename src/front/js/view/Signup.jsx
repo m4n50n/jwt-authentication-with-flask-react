@@ -22,7 +22,7 @@ export const Signup = () => {
 							<div className="form-text">Don't worry, we won't give it to anyone</div>
 						</div>
 
-						<div class="invalid-feedback text-danger text-center fw-normal mb-2">
+						<div className="invalid-feedback text-danger text-center fw-normal mb-2">
 							<small>Invalid email or password.</small>
 						</div>
 
@@ -30,10 +30,10 @@ export const Signup = () => {
 							<button type="submit" className="btn btn-sm btn-success text-white shadow-none">Sign Up</button>
 						</div>
 
-						<div class="text-white text-end fw-normal mt-4">
+						<div className="text-white text-end fw-normal mt-4">
 							<small>Already have an account?</small>
 
-							<Link to="login" className="ms-2 text-light text-decoration-none fw-bold">
+							<Link to="/login" className="ms-2 text-light text-decoration-none fw-bold">
 								Log In
 							</Link>
 						</div>
