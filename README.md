@@ -1,6 +1,6 @@
 # ![4Geeks Logo](http://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=4geeks,16) JWT Authentication with Flask & React.js
 
-![screenshot](https://raw.githubusercontent.com/m4n50n/jwt-authentication-with-flask-react/main/login_diagram.jpeg)
+![screenshot](https://raw.githubusercontent.com/m4n50n/jwt-authentication-with-flask-react/main/screenshot_preview.png)
 
 ✏ Implementing an authentication system with the following parts:
 
@@ -9,10 +9,24 @@
 3. **Validation**: Any page considered "private" must always validate that the current user is valid, if not, the page must redirect the user back to login.
 4. **Logout**: Any moment the user must be able to press _logout_ in the navbar and it will get redirected back to the login path.
 
-## Front-End Installation 📄
+## Code schema 🔩
+
+The following pages and React components have been implemented into the project:
+
+| Path       | Component   | Functionality                                                     |
+| ---------- | ----------- | ----------------------------------------------------------------- |
+| `/signup`  | `<Signup>`  | Renders the signup form                                           |
+| `/login`   | `<Login>`   | Renders the login form                                            |
+| `/private` | `<Private>` | Validates that only authenticated users and render this component |
+
+## Preview 🎬
+
+### ▪ Front-End
 
 1. Install the packages: `$ npm install`
 2. Start the webpack dev server by running: `$ npm run start`
+
+### ▪ Back-End
 
 ## Sources 📌
 
