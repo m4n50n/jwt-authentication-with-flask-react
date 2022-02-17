@@ -21,12 +21,18 @@ The following pages and React components have been implemented into the project:
 
 ## Preview 🎬
 
-### ▪ Front-End
-
-1. Install the packages: `$ npm install`
-2. Start the webpack dev server by running: `$ npm run start`
+You can open this repository in **Gitpod**.
 
 ### ▪ Back-End
+
+It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Postgresql recommended)
+
+1. Run the application: `$ pipenv run start`
+
+### ▪ Front-End
+
+1. Start the webpack server with live reload running the next command: `$ npm run start`
+2. If you can't start the server, run the following command: `$ npm install`
 
 ## Sources 📌
 
