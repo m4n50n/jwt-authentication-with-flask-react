@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
 
 export const Signup = () => {
-	const { store, actions } = useContext(Context);
-
 	return (
 		<div>
 			<div className="row justify-content-center align-items-center">

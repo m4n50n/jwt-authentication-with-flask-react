@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import injectContext from "./store/appContext";
 
 // Views
 import { Signup } from "./view/Signup.jsx";
@@ -44,4 +43,4 @@ const AppRouter = () => {
 	);
 };
 
-export default injectContext(AppRouter);
+export default AppRouter;
