@@ -1,17 +1,18 @@
 from api.shared.encrypt_password import encrypt_pass, check_pass
+from api.shared.validate_email import check_email
 from api.models.index import db, User
 from flask_jwt_extended import create_access_token
 
 def get_user_by_id(user_id):
     return User.query.get(user_id)
 
-def add_user(body):
+def register_user(body):
     try:
-        if body["email"] is None:
+        if "email" not in body or len(body["email"]) == 0 or check_email(body["email"]) == False:
             return False
 
-        if body["password"] is None:
-            return False        
+        if "password" not in body or len(body["password"]) == 0:
+            return False
 
         hash_pass = encrypt_pass(body["password"])
         new_user = User(email=body["email"], password=hash_pass)
@@ -28,13 +29,13 @@ def add_user(body):
 
 def login_user(body):
     try:
-        if body["email"] is None:
+        if "email" not in body or len(body["email"]) == 0:
             return False
 
-        if body["password"] is None:
+        if "password" not in body or len(body["password"]) == 0:
             return False
-
-        user = db.session.query(User).filter(User.email == body["email"])
+        
+        user = db.session.query(User).filter(User.email == body["email"]).first()
         if user is None:
             return "not_exist"
 

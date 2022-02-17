@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.app.user.controller import get_user_by_id, add_user, login_user
+from api.app.user.controller import get_user_by_id, register_user, login_user
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 
@@ -17,9 +17,9 @@ def get_user():
         return jsonify(user.serialize()), 200
 
 @users.route("/register", methods=["POST"])
-def add_user():
+def create_user():
     body = request.get_json()
-    new_user = add_user(body)
+    new_user = register_user(body)
 
     if new_user == False:
         return jsonify("Bad Request"), 400
@@ -29,7 +29,7 @@ def add_user():
         return jsonify(new_user), 201
 
 @users.route("/login", methods=["POST"])
-def login_user():
+def user_login():
     body = request.get_json()
     token = login_user(body)
 
