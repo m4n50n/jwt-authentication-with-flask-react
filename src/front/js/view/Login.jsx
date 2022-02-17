@@ -23,7 +23,7 @@ export const Login = () => {
                         </div>
 
                         <div className="invalid-feedback text-danger text-center fw-normal mb-2">
-                            <small>Sorry, we don't recognise this account.</small>
+                            <small>Sorry, we don't recognise this account</small>
                         </div>
 
                         <div className="d-grid">

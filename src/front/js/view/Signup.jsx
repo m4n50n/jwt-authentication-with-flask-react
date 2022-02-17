@@ -23,7 +23,7 @@ export const Signup = () => {
 						</div>
 
 						<div className="invalid-feedback text-danger text-center fw-normal mb-2">
-							<small>Invalid email or password.</small>
+							<small>Invalid email or password</small>
 						</div>
 
 						<div className="d-grid">
