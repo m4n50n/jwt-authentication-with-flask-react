@@ -23,7 +23,7 @@ def add_user(body):
 
     except Exception as err:
         db.session.rollback()
-        print("[ERROR REGISTER USER]: ", err)
+        print("[ERROR ADD USER]: ", err)
         return None
 
 def login_user(body):
@@ -34,11 +34,11 @@ def login_user(body):
         if body["password"] is None:
             return False
 
-        user = db.session.query(User).filter(User.email == body["email"]).first()
+        user = db.session.query(User).filter(User.email == body["email"])
         if user is None:
             return "not_exist"
 
-        validate_pass = compare_pass(body["password"], user.password)
+        validate_pass = check_pass(body["password"], user.password)
         if validate_pass == False:
             return "pass_error"
 
@@ -46,5 +46,5 @@ def login_user(body):
         return { "token": new_token }
         
     except Exception as err:
-        print("[ERROR LOGIN]: ", err)
+        print("[ERROR LOGIN USER]: ", err)
         return None

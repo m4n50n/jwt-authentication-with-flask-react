@@ -1,8 +1,6 @@
-  
 import os
 from flask_admin import Admin
-from api.models.db import db
-from api.models.index import User
+from api.models.index import db, User
 from flask_admin.contrib.sqla import ModelView
 
 def setup_admin(app):
