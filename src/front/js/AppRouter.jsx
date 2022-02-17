@@ -1,12 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import injectContext from "./store/appContext";
 
 // Views
-import { Home } from "./views/home.jsx";
+import { Signup } from "./views/Signup.jsx";
+import { Login } from "./views/Login.jsx";
+import { Private } from "./views/Private.jsx";
 
 // Layout
-import Layout from "./layout/layout.jsx";
+import Layout from "./layout/Layout.jsx";
 
 // Main component
 const AppRouter = () => {
@@ -20,10 +22,21 @@ const AppRouter = () => {
 				<Layout>
 					<Switch>
 						<Route exact path="/">
-							<Home />
+							<Redirect to="/login" />
+						</Route>
+						<Route exact path="/signup">
+							<Signup />
+						</Route>
+						<Route exact path="/login">
+							<Login />
+						</Route>
+						<Route exact path="/private">
+							<Private />
 						</Route>
 						<Route>
-							<h1>PAGE NOT FOUND!</h1>
+							<h2 className="text-center my-5">
+								<span className="px-5 pt-2 pb-3 rounded-3 bg-white bg-opacity-25">ERROR 404: PAGE NOT FOUND</span>
+							</h2>
 						</Route>
 					</Switch>
 				</Layout>

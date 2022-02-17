@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Footer } from "../component/footer.jsx";
+import { Header } from "../component/Header.jsx";
+import { Footer } from "../component/Footer.jsx";
 
 const Layout = (props) => {
     return (
         <>
+            <Header />
             {props.children}
             <Footer />
         </>
