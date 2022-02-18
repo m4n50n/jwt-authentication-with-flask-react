@@ -4,14 +4,6 @@ from api.shared.response import success_response, error_response
 from api.models.index import db, User
 from flask_jwt_extended import create_access_token
 
-def get_user_by_id(user_id):
-    result = User.query.get(user_id)
-
-    if result is None:
-        return error_response("User not found", 404)
-    else:
-        return success_response(user.serialize())
-
 def register_user(body):
     try:
         if body is None:
@@ -36,7 +28,7 @@ def register_user(body):
 
     except Exception as err:
         db.session.rollback()
-        print("[ERROR ADD USER]: ", err)
+        print("[ERROR REGISTER USER]: ", err)
         return error_response("Internal Server Error. Please, try again later.")
 
 def login_user(body):
@@ -65,5 +57,15 @@ def login_user(body):
         print("[ERROR LOGIN USER]: ", err)
         return error_response("Internal Server Error")
 
-def validate_user(body):
-    pass
+def validate_user(token):
+    try:
+        user = User.query.get("sds")
+
+        if user is None:
+            return error_response("User not found", 404)
+        else:
+            return success_response(user.serialize())
+
+    except Exception as err:
+        print("[ERROR VALIDATE USER]: ", err)
+        return error_response("Internal Server Error")

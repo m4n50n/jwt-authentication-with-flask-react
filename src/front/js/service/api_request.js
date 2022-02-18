@@ -13,14 +13,11 @@ export const ApiUserLogin = (userCredentials) =>
         body: JSON.stringify(userCredentials)
     });
 
-export const ApiUserValidation = () => {
-    const token = localStorage.getItem("token");
-
-    return fetch(`${URL}/validate`, {
-        method: "POST",
+export const ApiUserValidation = () =>
+    fetch(`${URL}/validate`, {
+        method: "GET",
         headers: {
-            "Authorization": token,
-        },
-        body: JSON.stringify(token)
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("token"),
+        }
     });
-}
