@@ -18,4 +18,6 @@ def user_login():
 @users.route("/validate", methods=["GET"])
 @jwt_required()
 def user_validate():
-    return validate_user(get_jwt_identity())
+    print("aqui")
+    user_id = get_jwt_identity()
+    return validate_user(user_id["id"])

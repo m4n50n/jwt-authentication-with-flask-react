@@ -59,7 +59,7 @@ def login_user(body):
 
 def validate_user(token):
     try:
-        user = User.query.get("sds")
+        user = User.query.get(token)
 
         if user is None:
             return error_response("User not found", 404)

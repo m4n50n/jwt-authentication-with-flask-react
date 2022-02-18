@@ -10,14 +10,14 @@ export const Login = () => {
     const [notifyMessage, setNotifyMessage] = useState(false);
     const [loginCorrect, setLoginCorrect] = useState(false);
 
-    const UserLogin = async () => {
+    const userLogin = async () => {
         try {
             const response = await ApiUserLogin(userCredentials);
             const status = response.status;
             const data = await response.json();
 
             if (status === 200) {
-                localStorage.setItem("token", data.token);
+                localStorage.setItem("api-flask-token", data.token);
                 setLoginCorrect(true);
             }
             else {
@@ -68,7 +68,7 @@ export const Login = () => {
                             <button
                                 type="button"
                                 className="btn btn-sm btn-success text-white shadow-none"
-                                onClick={() => { setLoading(true); UserLogin() }}
+                                onClick={() => { setLoading(true); userLogin() }}
                             >
                                 Log In
 

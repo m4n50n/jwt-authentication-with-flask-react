@@ -14,7 +14,7 @@ export const Signup = () => {
 	const modalParams = { show: false, message: "" };
 	const [modalConfig, setModalConfig] = useState(modalParams);
 
-	const UserRegister = async () => {
+	const userRegister = async () => {
 		try {
 			const response = await ApiUserRegister(userCredentials);
 			const status = response.status;
@@ -75,7 +75,7 @@ export const Signup = () => {
 						<button
 							type="button"
 							className="btn btn-sm btn-success text-white shadow-none"
-							onClick={() => { setLoading(true); UserRegister() }}
+							onClick={() => { setLoading(true); userRegister() }}
 						>
 							Sign Up
 
