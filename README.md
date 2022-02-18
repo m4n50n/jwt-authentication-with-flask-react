@@ -22,7 +22,7 @@ The following pages and React components have been implemented into the project:
 ## Preview 🎬
 
 * You can open this repository in **Gitpod**.
-* **IMPORTANT**! You must change the *value of the ***URL*** const variable* of the ***'./src/front/js/service/api_request.js*** file so that it is directed to the API server correctly.
+* **IMPORTANT**! You must change the *value of the ***URL*** const variable* of the ***'./src/front/js/service/api_request.js'*** file so that it is directed to the API server correctly.
 
 ### ▪ Back-End
 
