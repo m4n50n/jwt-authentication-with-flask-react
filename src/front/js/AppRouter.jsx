@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import injectContext from "../js/store/appContext"
 
 // Views
-import { Signup } from "./view/Signup.jsx";
-import { Login } from "./view/Login.jsx";
-import { Private } from "./view/Private.jsx";
-import { Error404 } from "./view/Error404.jsx";
+import { Signup } from "./views/Signup.jsx";
+import { Login } from "./views/Login.jsx";
+import { Private } from "./views/Private.jsx";
+import { Error404 } from "./views/Error404.jsx";
 
 // Layout
 import Layout from "./layout/Layout.jsx";
@@ -22,7 +23,7 @@ const AppRouter = () => {
 				<Layout>
 					<Switch>
 						<Route exact path="/">
-							<Redirect to="/login" />
+							<Redirect to="/signup" />
 						</Route>
 						<Route exact path="/signup">
 							<Signup />
@@ -43,4 +44,4 @@ const AppRouter = () => {
 	);
 };
 
-export default AppRouter;
+export default injectContext(AppRouter);

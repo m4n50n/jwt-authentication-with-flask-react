@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.app.user.controller import get_user_by_id, register_user, login_user
+from api.app.user.controller import get_user_by_id, register_user, login_user, validate_user
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 
@@ -9,37 +9,20 @@ users = Blueprint("users", __name__)
 @jwt_required()
 def get_user():
     user_id = get_jwt_identity()
-    user = get_user_by_id(user_id["id"])
-
-    if user is None:
-        return jsonify("User not found"), 404
-    else:
-        return jsonify(user.serialize()), 200
+    return get_user_by_id(user_id["id"])
 
 @users.route("/register", methods=["POST"])
 def create_user():
-    body = request.get_json()
-    new_user = register_user(body)
-
-    if new_user == False:
-        return jsonify("Bad Request"), 400
-    elif new_user is None:
-        return jsonify("Internal Server Error"), 500
-    else:
-        return jsonify(new_user), 201
+    body = request.get_json(force = True)
+    return register_user(body)
 
 @users.route("/login", methods=["POST"])
 def user_login():
-    body = request.get_json()
-    token = login_user(body)
+    body = request.get_json(force = True)
+    return login_user(body)
 
-    if token == False:
-        return jsonify("Bad Request"), 400
-    elif token is None:
-        return jsonify("Internal Server Error"), 500
-    elif token == "not_exist":
-        return jsonify("Sorry, we don't recognise this account"), 404
-    elif token == "pass_error":
-        return jsonify("Invalid email or password"), 401
-    else:
-        return jsonify(token), 200
+@users.route("/validate", methods=["POST"])
+def user_validate():
+    body = request.get_json(force = True)
+    return validate_user(body)
+    
