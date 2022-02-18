@@ -1,6 +1,6 @@
 # ![4Geeks Logo](http://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=4geeks,16) JWT Authentication with Flask & React.js
 
-![screenshot](https://raw.githubusercontent.com/m4n50n/jwt-authentication-with-flask-react/main/screenshot_preview.gif)
+![screenshot](https://raw.githubusercontent.com/m4n50n/jwt_authentication_with_flask_react/main/screenshot_preview.gif)
 
 ✏ Implementing an authentication system with the following parts:
 

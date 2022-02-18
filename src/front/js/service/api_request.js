@@ -1,4 +1,4 @@
-const URL = "https://3001-m4n50n-jwtauthenticati-qmjmilyn4cu.ws-eu32.gitpod.io";
+const URL = "https://3001-m4n50n-jwtauthenticati-unefitvx3h1.ws-eu32.gitpod.io"; // Without '/' at the end!
 
 // Fetch functions definition
 export const ApiUserRegister = (userCredentials) =>
