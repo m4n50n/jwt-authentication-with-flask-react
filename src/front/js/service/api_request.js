@@ -1,20 +1,20 @@
-const URL = "https://3001-4geeksacademy-reactflask-ze11bp894tn.ws-eu32.gitpod.io/api/user";
+const URL = "https://3001-m4n50n-jwtauthenticati-qmjmilyn4cu.ws-eu32.gitpod.io";
 
 // Fetch functions definition
 export const ApiUserRegister = (userCredentials) =>
-    fetch(`${URL}/register`, {
+    fetch(`${URL}/api/user/register`, {
         method: "POST",
         body: JSON.stringify(userCredentials)
     });
 
 export const ApiUserLogin = (userCredentials) =>
-    fetch(`${URL}/login`, {
+    fetch(`${URL}/api/user/login`, {
         method: "POST",
         body: JSON.stringify(userCredentials)
     });
 
 export const ApiUserValidation = () =>
-    fetch(`${URL}/validate`, {
+    fetch(`${URL}/api/user/validate`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

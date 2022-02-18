@@ -1,6 +1,6 @@
 # ![4Geeks Logo](http://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=4geeks,16) JWT Authentication with Flask & React.js
 
-![screenshot](https://raw.githubusercontent.com/m4n50n/jwt-authentication-with-flask-react/main/screenshot_preview.png)
+![screenshot](https://raw.githubusercontent.com/m4n50n/jwt-authentication-with-flask-react/main/screenshot_preview.gif)
 
 ✏ Implementing an authentication system with the following parts:
 
@@ -21,11 +21,16 @@ The following pages and React components have been implemented into the project:
 
 ## Preview 🎬
 
-You can open this repository in **Gitpod**.
+* You can open this repository in **Gitpod**.
+* **IMPORTANT**! You must change the *value of the ***URL*** const variable* of the ***'./src/front/js/service/api_request.js*** file so that it is directed to the API server correctly.
 
 ### ▪ Back-End
 
 It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Postgresql recommended)
+
+1. If you have problems with the database, run the following commands before starting the API server: 
+* `$ pipenv run migrate` 
+* `$ pipenv run upgarde`
 
 1. Run the application: `$ pipenv run start`
 
